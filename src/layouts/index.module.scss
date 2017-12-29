@@ -1,0 +1,46 @@
+.container {
+	margin-bottom: 1.25rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vw;
+    margin: 0 auto;
+    z-index: 9999;
+    position: fixed;
+}
+.headerContainer {
+    a {
+        color: #222;
+        text-decoration: none;
+        font-size: 1.25rem;
+    }
+}
+.navContainer {
+    display: inline-block;
+    a {
+        margin: 0 0.75rem;
+        color: #aaa;
+        text-decoration: none;
+        font-size: 0.75rem;
+    }
+    a:hover {
+        color: #333;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+.mobileMenu {
+    z-index: 9998;
+    background-color: white;
+    top: 0;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
