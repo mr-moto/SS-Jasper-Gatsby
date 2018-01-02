@@ -10,7 +10,12 @@
 		"gatsby-plugin-sass": "^1.0.15",
 		"gatsby-source-filesystem": "^1.5.11",
 		"gatsby-transformer-remark": "^1.7.26",
-		"react-icons": "^2.2.7"
+		"react-icons": "^2.2.7",
+		"react-redux": "^5.0.6",
+		"redux": "^3.7.2",
+		"redux-devtools-extension": "^2.13.2",
+		"redux-logger": "^3.0.6",
+		"redux-thunk": "^2.2.0"
 	},
 	"keywords": [
 		"gatsby"
