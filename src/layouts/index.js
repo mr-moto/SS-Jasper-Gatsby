@@ -25,7 +25,7 @@ class TemplateWrapper extends Component {
 	componentDidMount() {
 		setTimeout(() => {
 			window.requestAnimationFrame(() => this.resizeHandler());
-		}, 0);
+		});
 		window.addEventListener("resize", () => this.resizeHandler());
 	}
 	componentWillUnmount() {
@@ -49,6 +49,7 @@ class TemplateWrapper extends Component {
 							<Link to="/" onClick={() => this.clickHandler()}>Jasper Jin</Link>
 						</div>
 						<div className={styles.navContainer}>
+						{/* use the gatsby stuff to populate menu later */}
 							<Link to={`/`}>Work</Link>
 							<Link to={`/about/`}>About</Link>
 							<Link to={`/moodboard/`}>Moodboard</Link>
@@ -67,6 +68,7 @@ class TemplateWrapper extends Component {
 					</div>
 					{this.state.navOpen ? (
 						<div className={styles.mobileMenu}>
+						{/* use the gatsby stuff to populate menu later */}
 							<Link to={`/`} onClick={() => this.clickHandler()}>Work</Link>
 							<Link to={`/about/`} onClick={() => this.clickHandler()}>About</Link>
 							<Link to={`/moodboard/`} onClick={() => this.clickHandler()}>Moodboard</Link>
