@@ -5,7 +5,7 @@ export default ({ data }) => {
 	return (
 		<div>
 			{data.allMarkdownRemark.edges.map(({ node }) => (
-				<WorkPost key={node.id} thumbnail={node.frontmatter.thumbnail} />
+				<WorkPost key={node.id} thumbnail={node.frontmatter.thumbnail} title={node.frontmatter.title} type={node.frontmatter.type} />
 			))}
 		</div>
 	);q
@@ -13,12 +13,14 @@ export default ({ data }) => {
 
 export const query = graphql`
 	query workQuery {
-		allMarkdownRemark {
+		allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
 			edges {
 				node {
 					id
 					frontmatter {
 						thumbnail
+						title
+						type
 					}
 				}
 			}
