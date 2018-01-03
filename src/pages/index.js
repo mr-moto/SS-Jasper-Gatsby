@@ -1,24 +1,10 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from "react";
 
 class work extends Component {
-  state = { 
-
-    }
-  render() {
-    console.log(this.props.nav)
-    return (
-      <div>this is work</div>
-    );
-  }
-}
-
-
-const mapStateToProps = state => {
-	return {
-		nav: state.nav
+	state = {};
+	render() {
+		return <div>this is work</div>;
 	}
 }
 
-export default connect(mapStateToProps)(work);
-
+export default work;
