@@ -6,7 +6,7 @@ class work extends Component {
 
     }
   render() {
-    console.log(this.props.test)
+    console.log(this.props.nav)
     return (
       <div>this is work</div>
     );
@@ -16,7 +16,7 @@ class work extends Component {
 
 const mapStateToProps = state => {
 	return {
-		test: state.test
+		nav: state.nav
 	}
 }
 

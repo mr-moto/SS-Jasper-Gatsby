@@ -1,22 +1,21 @@
 // action
-const SET_TEST = "SET_TEST";
+const SET_NAV_HEIGHT = "SET_NAV_HEIGHT";
 
 // action creator
-export const setTest = test => {
-	return { type: SET_TEST, payload: test };
-    console.log(test)
+export const setNavHeight = navHeight => {
+	return { type: SET_NAV_HEIGHT, payload: navHeight };
 };
 
 // reducer
 const initialState = {
-	test: ""
+	navHeight: ""
 };
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case "SET_TEST":
+		case "SET_NAV_HEIGHT":
 			return {
 				...state,
-				test: action.payload
+				navHeight: action.payload
 			};
 		default:
 			return state;

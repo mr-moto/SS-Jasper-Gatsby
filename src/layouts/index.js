@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import { connect } from "react-redux"
-import { setTest } from '../redux/modules/test'
+import { setNavHeight } from '../redux/modules/nav'
 const {GoThreeBars, GoX} = require('react-icons/lib/go');
 
 import "./index.css";
@@ -15,15 +15,21 @@ class TemplateWrapper extends Component {
 		isHam: true,
 	};
 
+	resizeHandler(){
+		var navHeight = this.refs.nav.clientHeight;
+		this.props.dispatch(setNavHeight(navHeight))
+	}
+
 	componentDidMount(){
-		const navHeight = document.getElementById('cont').clientHeight; 
-		this.props.dispatch(setTest(navHeight))
-		// pass this in to redux so it can be used to add padding to content body.
+		window.addEventListener('resize', () => this.resizeHandler())
+
+	}
+	componentWillUnmount(){
+		window.removeEventListener('resize', () => this.resizeHandler())
 	}
 
 	render() {
-		
-		const { children, test } = this.props;
+		const { children } = this.props;
 		return (
 			<div>
 				<Helmet
@@ -33,8 +39,8 @@ class TemplateWrapper extends Component {
 						{ name: "keywords", content: "sample, something" }
 					]}
 				/>
-				<div className={styles.test} id="cont">
-					<div className={styles.container}>
+				<div>
+					<div className={styles.container} ref='nav'>
 						<div className={styles.headerContainer}>
 							<Link to="/">Jasper Jin</Link>
 						</div>
@@ -77,12 +83,6 @@ class TemplateWrapper extends Component {
 		);
 	}
 }
-
-// const mapStateToProps = state => {
-// 	return {
-// 		test: state.test
-// 	}
-// }
 
 TemplateWrapper.propTypes = {
 	children: PropTypes.func
