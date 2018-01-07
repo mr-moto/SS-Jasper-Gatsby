@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./WorkPost.module.scss";
+import styles from "./WorkThumb.module.scss";
 
 const WorkPost = ({ thumbnail, title, type }) => {
 	return (
@@ -7,6 +7,7 @@ const WorkPost = ({ thumbnail, title, type }) => {
 			<div className={styles.container}>
 				<img className={styles.img} src={thumbnail} alt="" />
 				<div className={styles.hover}>
+				{/* TODO transitions */}
 					<h2>{title}</h2>
 					<p>{type}</p>
 				</div>

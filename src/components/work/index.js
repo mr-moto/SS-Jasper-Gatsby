@@ -1,1 +1,1 @@
-export { default as WorkPost} from './WorkPost'
+export { default as WorkThumb} from './WorkThumb'

@@ -18,8 +18,8 @@ class TemplateWrapper extends Component {
 		const navHeight = this.refs.nav.clientHeight;
 		this.setState({ navHeight });
 	}
-	clickHandler(){
-		this.setState({navOpen: false, isHam: true})
+	clickHandler() {
+		this.setState({ navOpen: false, isHam: true });
 	}
 
 	componentDidMount() {
@@ -46,10 +46,12 @@ class TemplateWrapper extends Component {
 				<div>
 					<div className={styles.container} ref="nav">
 						<div className={styles.headerContainer}>
-							<Link to="/" onClick={() => this.clickHandler()}>Jasper Jin</Link>
+							<Link to="/" onClick={() => this.clickHandler()}>
+								Jasper Jin
+							</Link>
 						</div>
 						<div className={styles.navContainer}>
-						{/* use the gatsby stuff to populate menu later */}
+							{/* TODO use the gatsby stuff to populate menu later */}
 							<Link to={`/`}>Work</Link>
 							<Link to={`/about/`}>About</Link>
 							<Link to={`/moodboard/`}>Moodboard</Link>
@@ -68,10 +70,16 @@ class TemplateWrapper extends Component {
 					</div>
 					{this.state.navOpen ? (
 						<div className={styles.mobileMenu}>
-						{/* use the gatsby stuff to populate menu later */}
-							<Link to={`/`} onClick={() => this.clickHandler()}>Work</Link>
-							<Link to={`/about/`} onClick={() => this.clickHandler()}>About</Link>
-							<Link to={`/moodboard/`} onClick={() => this.clickHandler()}>Moodboard</Link>
+							{/* TODO use the gatsby stuff to populate menu later */}
+							<Link to={`/`} onClick={() => this.clickHandler()}>
+								Work
+							</Link>
+							<Link to={`/about/`} onClick={() => this.clickHandler()}>
+								About
+							</Link>
+							<Link to={`/moodboard/`} onClick={() => this.clickHandler()}>
+								Moodboard
+							</Link>
 						</div>
 					) : null}
 				</div>
