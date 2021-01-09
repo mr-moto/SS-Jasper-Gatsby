@@ -1,2 +1,1 @@
-# SS Jasper demo template copy using Gatsby
-working on it :)
+# _2018 ARCHIVED_
